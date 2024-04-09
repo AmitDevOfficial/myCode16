@@ -25,6 +25,7 @@ body{
     --primary: #9333ea;
     --secondary: #221d1d;
     --tertiary: #1f2937;
+    /* --overlay:  */
   }
 
   [data-theme="dark"]{

@@ -1,5 +1,12 @@
 import typewriter from '../js/body'
-import robo from '../videos/robo2.gif'
+import robo from '../videos/robo2.gif';
+import Home from './Home';
+import HomeBook from './HomeBook';
+import Youtube from './Youtube';
+import EasySearch from './EasySearch';
+import HowStart from './HowStart';
+import Footer from '../header/Footer';
+
 export default function Banner() {
   return (
     <>
@@ -15,6 +22,13 @@ export default function Banner() {
           <img src={robo} alt="loading" />
         </div>
       </div>
+      
+     <Home/>
+     <HomeBook/>
+     <Youtube/>
+     <EasySearch/>
+     <HowStart/>
+     <Footer/>
     </>
   )
 }

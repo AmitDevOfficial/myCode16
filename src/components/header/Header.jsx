@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import Login from '../index/Login';
 
 
 export default function (props) {
@@ -10,21 +12,21 @@ export default function (props) {
       <header className='navbar'>
         <div className="container main-header">
           <div className="logo">
-            <h1>CODE16</h1>
+            <h1><Link to="/">CODE16</Link></h1>
           </div>
           <div className="menu">
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Course</a></li>
-              <li><a href="#">Tutorial</a></li>
-              <li><a href="#">Blog</a></li>
-              <li className="btn"><a href='#'>Contact</a></li>
+              <li><Link to="/">Home</Link></li> 
+              <li><Link to="/course">Course</Link></li>
+              <li><Link to="/toutrial">Tutorial</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li className="btn"><Link to='/contact'>Contact</Link></li>
             </ul>
           </div>
           <div className='right-side-l-i'>
             <div className='headBtn'>
               <ul>
-                <li className='headBtn-one'>Login</li>
+                <li className='headBtn-one'><Login login="Login"/></li>
                 <li className='headBtn-two'>Sign Up</li>
               </ul>
             </div>
@@ -35,12 +37,12 @@ export default function (props) {
         </div>
         <div className="course-menu">
           <ul>
-            <li><a href="#">Html</a></li>
-            <li><a href="#">css</a></li>
-            <li><a href="#">javascript</a></li>
-            <li><a href="#">jquery</a></li>
-            <li><a href="#">Python</a></li>
-            <li><a href="#">cms</a></li>
+            <li><Link to="/html">Html</Link></li>
+            <li><Link to="/css">Css</Link></li>
+            <li><Link to="/javascript">Javascript</Link></li>
+            <li><Link to="/jquery">Jquery</Link></li>
+            <li><Link to="/python">Python</Link></li>
+            <li><Link to="/cms">CMS</Link></li>
           </ul>
         </div>
       </header>

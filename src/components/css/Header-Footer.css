@@ -23,7 +23,10 @@
     letter-spacing: 1px;
     font-family: poppins-bold;
 }
-
+.logo a{
+  text-decoration: none;
+  color: var(--primary);
+}
 .menu ul {
     display: flex;
     align-items: center;
