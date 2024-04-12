@@ -386,6 +386,10 @@
 }
 
 /*--------------Happy Ending At the End------------------*/
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 9999;
+}
+
 .boxModal button{
   border:none;
   background: transparent;
@@ -397,10 +401,12 @@
   display: flex;
   justify-content: space-between;
 }
+
 .login-main h2{
   margin: 0px;
   padding: 0px
 }
+
 .login-form input{
   padding: 8px;
   width: 100%;
@@ -409,23 +415,39 @@
   border-radius: 8px;
   border: 2px solid var(--primary);
 }
+
 .login-form span{
   color: var(--primary);
 }
+
 .ReactModal__Content{
   background-color: var(--dark) !important;
   border: 1px solid var(--primary)
 }
+
 .ReactModal__Overlay{
   background-color: #00000091 !important;
 }
-.login-socialBtn button{
- background-color: transparent;
- border: 1px solid var(--primary);
- gap: 30px;
- /* padding: 0; */
- margin: 0;
+
+.login-socialBtn{
+  margin-bottom: 20px;
 }
+
+.login-socialBtn button{
+  justify-content: center;
+ background-color: transparent;
+ border: 2px solid var(--primary);
+ width: 47%;
+ margin-right: 0px;
+}
+
 .login-socialBtn button a{
   color: var(--primary);
  }
+
+ .login-socialBtn button:hover{
+  background-color: white;
+  color: var(--primary);
+ }
+
+ 

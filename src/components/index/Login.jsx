@@ -1,7 +1,15 @@
 import React from 'react'
 import Modal from 'react-modal';
 import CloseIcon from '@mui/icons-material/Close';
+import { Link } from 'react-router-dom';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
+Modal.setAppElement('#root');
+
+
+// eslint-disable-next-line
 const customStyles = {
     content: {
         top: '50%',
@@ -53,15 +61,19 @@ export default function Login(props) {
                 <div className='login-form btn'>
                     <p>You Don't have an Account? <span>Sign Up</span></p>
                     <div className="login-socialBtn">
-                        <button><a href="#">Login</a></button>
-                        <button><a href="#">Login</a></button>
-                        <button><a href="#">Login</a></button>
-                        <button><a href="#">Login</a></button>
+                        <div className="login-socialBtn-first">
+                            <button style={{ marginRight: "20px" }} ><Link to="/facebook">Google <GoogleIcon/></Link></button>
+                            <button><Link to="/google">FaceBook <FacebookIcon/></Link></button>
+                        </div>
+                        <div className="login-socialBtn-first">
+                            <button style={{ marginRight: "20px" }}><Link to="/instagram">Discord</Link></button>
+                            <button><Link to="/github">GitHub <GitHubIcon/></Link></button>
+                        </div>
                     </div>
                     <form action="">
                         <input type="text" placeholder='Enter your Email' /><br />
-                        <input type="text" placeholder='Enter your Email' /><br />
-                        <button><a href="#">Login</a></button>
+                        <input type="text" placeholder='Enter your Password' /><br />
+                        <button><Link to="#">Login</Link></button>
                     </form>
                 </div>
             </Modal>

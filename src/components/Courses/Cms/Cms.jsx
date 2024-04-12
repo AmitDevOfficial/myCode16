@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Javascript() {
+export default function Cms() {
   return (
     <div className='container'>
-      i am the brain of the Javascript
+      <h1>Hey i am Wordpress CMS</h1>
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Css() {
+export default function Html() {
   return (
     <div className='container'>
-      Hey i am styling of the css
+      <h1>Hey i am structure of the html</h1>
     </div>
   )
 }

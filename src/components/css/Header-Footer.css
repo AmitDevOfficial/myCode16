@@ -100,8 +100,9 @@ svg.myicon {
     display: flex;
     gap: 20px;
     width: 20%;
-    justify-content: end;
+    justify-content: center;
 }
+
 /*-----------Footer---------------*/
 .divide-footer{
     display: flex;

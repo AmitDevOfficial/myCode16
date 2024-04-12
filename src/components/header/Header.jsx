@@ -4,7 +4,7 @@ import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Login from '../index/Login';
 
-
+// eslint-disable-next-line 
 export default function (props) {
 
   return (
