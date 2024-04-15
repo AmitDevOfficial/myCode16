@@ -15,6 +15,8 @@ import Css from './components/Courses/Css/Css';
 import Jquery from './components/Courses/Jquery/Jquery';
 import Python from './components/Courses/Python/Python';
 import Cms from './components/Courses/Cms/Cms';
+import Notes from './components/index/Notes';
+import UserDashboard from './components/index/UserDashboard';
 
 
 
@@ -24,7 +26,7 @@ function App() {
    // eslint-disable-next-line
   const toggleMode = () => {
     if (mode === 'light') {
-      setMode('dark')
+      setMode('dark') 
       document.querySelector("body").setAttribute("data-theme", "dark")
       document.body.style.color = "white";
     } else {
@@ -46,16 +48,16 @@ function App() {
            <Route exact path="/toutrial" element={<Toutrial />}></Route>
            <Route exact path="/blog" element={<Blog />}></Route>
            <Route exact path="/contact" element={<Contact />}></Route>
+           <Route exact path="/notes" element={<Notes />}></Route>
+           <Route exact path="/user" element={<UserDashboard />}></Route>
 
            <Route exact path="/html" element={<Html />}></Route>
            <Route exact path="/css" element={<Css />}></Route>
-          
            <Route exact path="/jquery" element={<Jquery />}></Route>
            <Route exact path="/jquery" element={<Jquery />}></Route>
            <Route exact path="/python" element={<Python />}></Route>
            <Route exact path="/cms" element={<Cms />}></Route>
         </Routes>
-     
       </BrowserRouter>
 
     </>

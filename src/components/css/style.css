@@ -449,5 +449,14 @@
   background-color: white;
   color: var(--primary);
  }
-
+ .or{
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 0;
+ }
+.sbtn{
+  color: var(--dark);
+  font-size: 16px;
+  font-weight: 600
+}
  

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Modal from 'react-modal';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link, useNavigate } from 'react-router-dom';
@@ -26,9 +26,7 @@ const customStyles = {
     },
 };
 
-
-export default function Login(props) {
-  
+export default function SignUp(props) {
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -43,51 +41,47 @@ export default function Login(props) {
 
     function closeModal() {
         setIsOpen(false);
+        console.log("Closing modal");
     }
-
 
 
     const host = "http://localhost:8000";
 
-    const [cred, setCred] = useState({email: "", password: ""})
+    const [cred, setCred] = useState({name: "", email: "", password: ""})
     const navigate = useNavigate();
 
-    const onChange = (e) => {
-        setCred({ ...cred, [e.target.name]: e.target.value })
+    const onChange = (e) =>{
+        setCred({...cred, [e.target.name]: e.target.value})
     }
 
-    const handelOnSubmit = async (e) => {
+    const handelOnSubmit = async(e) => {
         e.preventDefault();
-        try {
-            const response = await fetch(`${host}/api/auth/login`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email: cred.email, password: cred.password }),
-            });
-            if (!response.ok) {
-                throw new Error('Login failed');
-            }
-            const json = await response.json();
-            console.log(json);
-            if (json.success) {
-                // redirect to HomePage--
-                localStorage.setItem("token", json.authToken);
-                console.log("You have Successfully Login")
-                navigate("/");
-                closeModal();
-            } else {
-                // alert("Invaild Credintials, Please try again...")
-                console.log("Not Login")
-            }
-        } catch (error) {
-            console.log("Interanl Server Error")
+        const {name, email, password} = cred;
+
+        const response = await fetch(`${host}/api/auth/createuser`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({name, email, password}),
+        })
+        const json = await response.json();
+        console.log(json);
+        if (json.success) {
+            // redirect to HomePage--
+            localStorage.setItem("token", json.authToken);
+            console.log("You have Successfully Created your account")
+            navigate("/");
+            closeModal();
+        } else {
+            // alert("Invaild Credintials, Please try again...")
+            console.log("Not Created")
         }
     }
+
     return (
-        <div className='boxModal'>
-            <button className="headBtn-one" onClick={openModal}>{props.login}</button>
+        <div className='boxModal'>  
+            <button className="headBtn-one" onClick={openModal}>{props.signup}</button>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -96,12 +90,12 @@ export default function Login(props) {
                 contentLabel="Example Modal"
             >
                 <div className='login-main'>
-                    <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Login Your Account Here</h2>
+                    <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Sign Up Your Account Here</h2>
                     <CloseIcon onClick={closeModal} />
                 </div>
 
                 <div className='login-form btn'>
-                    <p>You Don't have an Account? <span>Sign Up</span></p>
+                    <p>Already have an account? <span>Login</span></p>
                     <div className="login-socialBtn">
                         <div className="login-socialBtn-first">
                             <button style={{ marginRight: "20px" }} ><Link to="/facebook">Google <GoogleIcon fontSize="small" /></Link></button>
@@ -114,9 +108,10 @@ export default function Login(props) {
                     </div>
                     <p className='or'>OR</p>
                     <form onSubmit={handelOnSubmit}>
-                        <input type="text" placeholder='Enter your Email' id="email" name="email" value={cred.email} onChange={onChange} required/><br />
-                        <input type="text" placeholder='Enter your Password' id="password" name="password"  value={cred.password} onChange={onChange} required/><br />
-                        <button type="submit" className='sbtn'>Login</button>
+                        <input type="text" placeholder='Enter your Name' id="name" name="name" onChange={onChange} required/><br />
+                        <input type="text" placeholder='Enter your Email' id="email" name="email" onChange={onChange} required/><br />
+                        <input type="text" placeholder='Enter your Password' id="password" name="password" onChange={onChange} required/><br />
+                        <button type="submit" className='sbtn'>Sign Up</button>
                     </form>
                 </div>
             </Modal>

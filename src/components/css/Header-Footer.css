@@ -55,7 +55,14 @@
 .headBtn ul li{
     font-size: 16px;
     list-style: none;
-    padding: 4px 16px;
+    /* padding: 4px 14px; */
+    padding: 6px 12px;
+}
+.headBtn .user{
+  padding-top: 6px;
+}
+.headBtn .userlogout{
+  cursor: pointer;
 }
 .change-body{
     cursor: pointer;
@@ -103,6 +110,13 @@ svg.myicon {
     justify-content: center;
 }
 
+.userDash{
+  text-decoration: none;
+  color: var(--reverse);
+}
+.userDash:hover{
+  color: white;
+}
 /*-----------Footer---------------*/
 .divide-footer{
     display: flex;
