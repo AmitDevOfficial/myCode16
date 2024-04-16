@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import './html.css';
+import Sidebar from './Sidebar';
 
 export default function Html() {
   return (
-    <div className='container'>
-      <h1>Hey i am structure of the html</h1>
-    </div>
+    <>
+      <div className='main-template'>
+        <div className="sideBar">
+          <Sidebar />
+        </div>
+        <div className="template">
+          <h1>template</h1>
+        </div>
+      </div>
+    </>
   )
 }

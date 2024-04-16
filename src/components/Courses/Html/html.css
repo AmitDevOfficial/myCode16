@@ -1,0 +1,37 @@
+.main-template{
+    display:  flex;
+    gap: 30px;
+    position: relative;
+}
+.sideBar{
+    border: 2px solid var(--primary);
+    color: white;
+    padding: 20px;
+    background-color: var(--primary);
+    overflow-y: auto;
+    position: fixed;
+    height: 100vh;
+}
+.template{
+    width: 70%;
+    height: 100vh;
+    transform: translateX(217px);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 20px;
+    height: 5px; /* Adjust the height as needed */
+}
+
+.sideBar ul li{
+    list-style: none;
+}
+.sideBar ul li a{
+    text-decoration: none;
+    color: white;
+    line-height: 37px;
+}
+.content{
+    height: 1350px;
+}

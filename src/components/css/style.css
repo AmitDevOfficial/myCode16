@@ -459,4 +459,30 @@
   font-size: 16px;
   font-weight: 600
 }
- 
+
+/*------------------User DashBoard-------------------*/
+.dash-heading {
+  background: linear-gradient(to right, #a900ff 0%, #ff03a3f2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dashboard-main{
+  margin-top: 30px;
+}
+
+.dash-border{
+  display: flex;
+  border: 2px solid var(--primary);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 65%;
+}
+
+.dash-border.two{
+  margin-right: 20px;
+  justify-content: space-between;
+}

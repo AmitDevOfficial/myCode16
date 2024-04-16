@@ -1,5 +1,5 @@
 import React from 'react'
-import python from "../photos/python.png"
+// import python from "../photos/python.png"
 export default function HomeBook() {
     return (
         <div className='container homeBook'>

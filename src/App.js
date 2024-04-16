@@ -17,16 +17,16 @@ import Python from './components/Courses/Python/Python';
 import Cms from './components/Courses/Cms/Cms';
 import Notes from './components/index/Notes';
 import UserDashboard from './components/index/UserDashboard';
-
+import Footer from './components/header/Footer';
 
 
 
 function App() {
   const [mode, setMode] = useState('light'); //Wheather dark Mode is enable or not.
-   // eslint-disable-next-line
+  // eslint-disable-next-line
   const toggleMode = () => {
     if (mode === 'light') {
-      setMode('dark') 
+      setMode('dark')
       document.querySelector("body").setAttribute("data-theme", "dark")
       document.body.style.color = "white";
     } else {
@@ -43,21 +43,22 @@ function App() {
       <BrowserRouter>
         <Header mode={mode} toggleMode={toggleMode} />
         <Routes>
-           <Route exact path="/" element={<Banner />}></Route>
-           <Route exact path="/course" element={<Course />}></Route>
-           <Route exact path="/toutrial" element={<Toutrial />}></Route>
-           <Route exact path="/blog" element={<Blog />}></Route>
-           <Route exact path="/contact" element={<Contact />}></Route>
-           <Route exact path="/notes" element={<Notes />}></Route>
-           <Route exact path="/user" element={<UserDashboard />}></Route>
+          <Route exact path="/" element={<Banner />}></Route>
+          <Route exact path="/course" element={<Course />}></Route>
+          <Route exact path="/toutrial" element={<Toutrial />}></Route>
+          <Route exact path="/blog" element={<Blog />}></Route>
+          <Route exact path="/contact" element={<Contact />}></Route>
+          <Route exact path="/notes" element={<Notes />}></Route>
+          <Route exact path="/user" element={<UserDashboard />}></Route>
 
-           <Route exact path="/html" element={<Html />}></Route>
+          <Route exact path="/html" element={<Html />}></Route>
            <Route exact path="/css" element={<Css />}></Route>
            <Route exact path="/jquery" element={<Jquery />}></Route>
            <Route exact path="/jquery" element={<Jquery />}></Route>
            <Route exact path="/python" element={<Python />}></Route>
            <Route exact path="/cms" element={<Cms />}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
 
     </>
