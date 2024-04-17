@@ -5,12 +5,11 @@
 }
 .template{
     width: 70%;
-    height: 100vh;
     transform: translateX(217px);
 }
 
 .sideBar{
-    border: 2px solid var(--primary);
+    border: 1px solid var(--primary);
     color: white;
     padding: 20px;
     background-color: var(--sidebar);
@@ -32,7 +31,7 @@
 }
 .content ul li:hover{
     background-color:#bcaaf740;
-    transition: 0.5s ease-in;
+    transition: 0.1s ease-in;
 }
 
 .scroll2::-webkit-scrollbar {
@@ -45,4 +44,28 @@
     border-radius: 50px;
   }
 
- 
+  /*----------------htmlHome--------------*/
+  .htmlHome{
+    margin-top: 40px;
+  }
+ .htmlHome h1{
+    color: var(--primary);
+ }
+
+ pre[class*="language-"] {
+    padding: 2em !important;
+    font-size: 18px !important;
+    border: 1px solid var(--primary);
+    border-radius: 1.3em;
+    border-radius: 20px !important;
+}
+.copyClipboard{
+    background-color: var(--primary);
+    padding: 10px;
+    border-radius: 10px;
+    float: right;
+}
+.copyClipboard:hover{
+    background-color: #bcaaf740;
+}
+
