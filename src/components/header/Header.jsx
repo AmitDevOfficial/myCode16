@@ -17,8 +17,9 @@ export default function (props) {
     localStorage.removeItem("token");
     navigate("/")
   }
-
   const isLoggedIn = localStorage.getItem("token");
+
+ 
 
   return (
     <>

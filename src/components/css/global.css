@@ -25,6 +25,7 @@ body{
     --primary: #9333ea;
     --secondary: #221d1d;
     --tertiary: #1f2937;
+    --sidebar: #9333ea;
     /* --overlay:  */
   }
 
@@ -34,6 +35,8 @@ body{
     --secondary: #c17eff;
     --tertiary: #eaeef2;
     --dark: #000000;
+    --sidebar: #000000;
+
   }
   img{
     width: 100%;

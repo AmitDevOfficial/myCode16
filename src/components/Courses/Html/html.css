@@ -3,25 +3,20 @@
     gap: 30px;
     position: relative;
 }
-.sideBar{
-    border: 2px solid var(--primary);
-    color: white;
-    padding: 20px;
-    background-color: var(--primary);
-    overflow-y: auto;
-    position: fixed;
-    height: 100vh;
-}
 .template{
     width: 70%;
     height: 100vh;
     transform: translateX(217px);
 }
 
-body::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
-    border-radius: 20px;
-    height: 5px; /* Adjust the height as needed */
+.sideBar{
+    border: 2px solid var(--primary);
+    color: white;
+    padding: 20px;
+    background-color: var(--sidebar);
+    overflow: auto;
+    position: fixed;
+    height: 70vh;
 }
 
 .sideBar ul li{
@@ -35,3 +30,19 @@ body::-webkit-scrollbar-thumb {
 .content{
     height: 1350px;
 }
+.content ul li:hover{
+    background-color:#bcaaf740;
+    transition: 0.5s ease-in;
+}
+
+.scroll2::-webkit-scrollbar {
+    width: 5px;
+    height: 20%;
+  }
+   
+  .scroll2::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 50px;
+  }
+
+ 

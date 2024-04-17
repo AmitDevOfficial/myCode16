@@ -18,7 +18,7 @@ import Cms from './components/Courses/Cms/Cms';
 import Notes from './components/index/Notes';
 import UserDashboard from './components/index/UserDashboard';
 import Footer from './components/header/Footer';
-
+  
 
 
 function App() {
@@ -52,11 +52,11 @@ function App() {
           <Route exact path="/user" element={<UserDashboard />}></Route>
 
           <Route exact path="/html" element={<Html />}></Route>
-           <Route exact path="/css" element={<Css />}></Route>
-           <Route exact path="/jquery" element={<Jquery />}></Route>
-           <Route exact path="/jquery" element={<Jquery />}></Route>
-           <Route exact path="/python" element={<Python />}></Route>
-           <Route exact path="/cms" element={<Cms />}></Route>
+          <Route exact path="/css" element={<Css />}></Route>
+          <Route exact path="/jquery" element={<Jquery />}></Route>
+          <Route exact path="/jquery" element={<Jquery />}></Route>
+          <Route exact path="/python" element={<Python />}></Route>
+          <Route exact path="/cms" element={<Cms />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
