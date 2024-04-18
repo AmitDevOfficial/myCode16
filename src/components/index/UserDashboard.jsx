@@ -35,20 +35,18 @@ export default function UserDashboard() {
 
   return (
     <div className="container dashboard">
-      <div className="dashboard-main">
-        <h1 className='dash-heading'>Welcome To Your Dashboard - {user.name}</h1>
-      </div>
+      <h1 className='dash-heading'>Welcome To Your Dashboard - {user.name}</h1>
       <div className='dash-border'>
-          <div className="one">
-            <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <p>Registration Date: {user.date}</p>
-          </div>
-          <div className="two">
-            <EditCalendarIcon />
-            <DeleteIcon />
-          </div>
+        <div className="one">
+          <p>Name: {user.name}</p>
+          <p>Email: {user.email}</p>
+          <p>Registration Date: {user.date}</p>
         </div>
+        <div className="two" style={{justifyContent:"center"}}>
+          <EditCalendarIcon />
+          <DeleteIcon />
+        </div>
+      </div>
     </div>
   )
 }

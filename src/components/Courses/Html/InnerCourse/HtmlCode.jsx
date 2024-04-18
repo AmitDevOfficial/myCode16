@@ -32,7 +32,7 @@ export default function HtmlCode(props) {
                     )
                 }
                 {/* <code className={`language-${props.language}`}>{props.code}</code> */}
-                <code id="myInput" className={`language-html language-javascript language-css`}>{props.code}</code>
+                <code id="myInput" className="language-html language-javascript language-css">{props.code}</code>
 
             </pre>
         </div>

@@ -468,10 +468,6 @@
   color: transparent;
 }
 
-.dashboard-main{
-  margin-top: 30px;
-}
-
 .dash-border{
   display: flex;
   border: 2px solid var(--primary);
@@ -482,7 +478,8 @@
   width: 65%;
 }
 
-.dash-border.two{
-  margin-right: 20px;
-  justify-content: space-between;
+.dash-border .two{
+ right: 20rem;
 }
+
+
