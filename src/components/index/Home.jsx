@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
@@ -22,7 +23,7 @@ export default function Home() {
                                     HTML is easy to learn - You will enjoy it!
                                 </li>
                             </ul>
-                            <button><a href="#">Start Learning...</a></button>
+                            <button><Link to="html">Start Learning...</Link></button>
                     </div>
                     <div className="career-one">
                             <h2>CSS</h2>
@@ -37,7 +38,7 @@ export default function Home() {
                                     HTML is easy to learn - You will enjoy it!
                                 </li>
                             </ul>
-                            <button><a href="#">Start Learning...</a></button>
+                            <button><Link to="css">Start Learning...</Link></button>
                     </div>
                     <div className="career-one">
                             <h2>JAVASCRIPT</h2>
@@ -52,7 +53,7 @@ export default function Home() {
                                     HTML is easy to learn - You will enjoy it!
                                 </li>
                             </ul>
-                            <button><a href="#">Start Learning...</a></button>
+                            <button><Link to="javascript">Start Learning...</Link></button>
                     </div>
                 </div>
             </section>

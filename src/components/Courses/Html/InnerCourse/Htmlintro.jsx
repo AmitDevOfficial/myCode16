@@ -17,7 +17,7 @@ export default function Htmlintro() {
     </body>
 </html>`
 
-  const JavaScript = `
+const JavaScript = `
 < !DOCTYPE html >
       <html>
           <body>
@@ -55,7 +55,7 @@ export default function Htmlintro() {
         <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
       </ul>
       <h1>A Simple HTML Document</h1>
-      <HtmlCode code={htmlCode} />
+      <HtmlCode code={htmlCode}  />
     </div>
   )
 }

@@ -18,6 +18,7 @@ import Cms from './components/Courses/Cms/Cms';
 import Notes from './components/index/Notes';
 import UserDashboard from './components/index/UserDashboard';
 import Footer from './components/header/Footer';
+import Htmlhome from './components/Courses/Html/InnerCourse/Htmlhome';
   
 
 
@@ -52,6 +53,7 @@ function App() {
           <Route exact path="/user" element={<UserDashboard />}></Route>
 
           <Route exact path="/html" element={<Html />}></Route>
+          <Route exact path="/html_home" element={<Htmlhome />}></Route>
           <Route exact path="/css" element={<Css />}></Route>
           <Route exact path="/jquery" element={<Jquery />}></Route>
           <Route exact path="/jquery" element={<Jquery />}></Route>

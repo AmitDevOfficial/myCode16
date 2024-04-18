@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './html.css';
 import Sidebar from './Sidebar';
+import HtmlSetPage from './HtmlSetPage';
+
+
+// ----------------------------This is the Main Page-------------------------------
 
 export default function Html() {
   const [content, setContent] = useState(null);
-
 
   // Function to handle the click event and set the content state
   const handleClick = (Component) => {
@@ -17,7 +20,8 @@ export default function Html() {
           <Sidebar handleClick={handleClick} />
         </div>
         <div className="template">
-          {content}
+        {content === null ? <HtmlSetPage/> : null}
+        {content}
         </div>
       </div>
     </>

@@ -19,8 +19,7 @@ export default function (props) {
   }
   const isLoggedIn = localStorage.getItem("token");
 
- 
-
+  
   return (
     <>
       <header className='navbar'>
