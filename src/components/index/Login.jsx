@@ -87,7 +87,7 @@ export default function Login(props) {
     }
     return (
         <div className='boxModal'>
-            <button className="headBtn-one" onClick={openModal}>{props.login}</button>
+            <li  onClick={openModal}>{props.login}</li>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}

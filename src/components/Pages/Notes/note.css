@@ -1,0 +1,26 @@
+.drawerNote{
+    padding: 20px;
+}
+.drawerBtn{
+    background-color: var(--primary) !important;
+}
+.drawerMain{
+    display: flex;
+}
+.drawerBtn-main{
+    width: 350px;
+}
+
+.drawerBtnDlt-main{
+   float: end;
+}
+.css-10hburv-MuiTypography-root {
+    font-size: 14px !important;
+    color: var(--dark) !important;
+    font-weight: 600 !important;
+    padding-right: 10px;
+}
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+    background-color: var(--dark) !important;
+    border-right: 2px solid var(--primary);
+}

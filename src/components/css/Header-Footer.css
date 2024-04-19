@@ -41,11 +41,25 @@
     text-decoration: none;
     color: var(--secondary);
 }
+
+.sideBtn{
+  color: var(--secondary);
+}
+
+.addNoteBtn{
+  font-size: 14px;
+  background-color: var(--primary);
+  color: var(--dark);
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+}
 .headBtn{
     border: 2px solid var(--primary); 
     border-radius: 20px;
 }
-.headBtn ul{
+.headBtn ul{  
     display: flex;
     /* gap:30px; */
     margin: 0px;
@@ -56,7 +70,13 @@
     font-size: 16px;
     list-style: none;
     /* padding: 4px 14px; */
-    padding: 6px 12px;
+    padding: 2px 8px;
+}
+.headBtn.user ul li{
+  font-size: 16px;
+  list-style: none;
+  /* padding: 4px 14px; */
+  padding: 4px 14px;
 }
 .headBtn .user{
   padding-top: 6px;

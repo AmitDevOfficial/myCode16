@@ -1,0 +1,10 @@
+.dragMain{
+    border: 1px solid black;
+    height: 100vh;
+}
+.dragging{
+    border: 1px solid black;
+    width: 200px;
+    cursor: move;
+}
+

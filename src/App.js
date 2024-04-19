@@ -15,10 +15,10 @@ import Css from './components/Courses/Css/Css';
 import Jquery from './components/Courses/Jquery/Jquery';
 import Python from './components/Courses/Python/Python';
 import Cms from './components/Courses/Cms/Cms';
-import Notes from './components/index/Notes';
 import UserDashboard from './components/index/UserDashboard';
 import Footer from './components/header/Footer';
 import Htmlhome from './components/Courses/Html/InnerCourse/Htmlhome';
+import Notes from './components/Pages/Notes/Notes';
   
 
 

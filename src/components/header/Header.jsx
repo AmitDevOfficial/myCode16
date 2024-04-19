@@ -4,6 +4,7 @@ import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import Login from '../index/Login';
 import SignUp from '../index/SignUp';
+import Notes from '../Pages/Notes/Notes';
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
@@ -34,7 +35,7 @@ export default function (props) {
               <li><Link to="/toutrial">Tutorial</Link></li>
               <li><Link to="/blog">Blog</Link></li>
               <li className="btn"><Link to='/contact'>Contact</Link></li>
-              {isLoggedIn && <li><Link to="/notes">Notes</Link></li>}
+              {isLoggedIn && <span><Notes/></span>}
             </ul>
           </div>
           <div className='right-side-l-i'>
@@ -43,7 +44,7 @@ export default function (props) {
                 <li className='headBtn-one'><Login login="Login" /></li>
                 <li className='headBtn-two'><SignUp signup="Sign Up" /></li>
               </ul>
-            </div>: <div className='headBtn'>
+            </div>: <div className='headBtn user'>
               <ul>  
                 <li className='headBtn-one'><Link className="userDash" to="/user">User</Link></li>
                 <li className='headBtn-two userlogout' onClick={handelOnLogout}>Logout</li>

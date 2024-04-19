@@ -26,7 +26,7 @@ export default function HtmlCode(props) {
                                 setCopy(true);
                                 setTimeout(() => {
                                     setCopy(false)
-                                }, 3000)
+                                }, 3000)        
                             }
                         }/>
                     )
