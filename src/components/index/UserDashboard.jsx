@@ -43,8 +43,8 @@ export default function UserDashboard() {
           <p>Registration Date: {user.date}</p>
         </div>
         <div className="two" style={{justifyContent:"center"}}>
-          <EditCalendarIcon />
-          <DeleteIcon />
+          <EditCalendarIcon className='userDash-icon'/>
+          <DeleteIcon className='userDash-icon'/>
         </div>
       </div>
     </div>

@@ -26,7 +26,7 @@ export default function (props) {
       <header className='navbar'>
         <div className="container main-header">
           <div className="logo">
-            <h1><Link to="/">CODE16</Link></h1>
+            <h1><Link to="/"><span style={{fontSize:"30px"}}>&#10092;</span>&#47;CODE16<span style={{fontSize:"30px"}}>&#10093;</span></Link></h1>
           </div>
           <div className="menu">
             <ul>

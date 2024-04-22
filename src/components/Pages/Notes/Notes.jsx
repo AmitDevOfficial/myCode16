@@ -1,7 +1,7 @@
 import React from 'react'
 import Drawer from '@mui/material/Drawer';
-import DrawerNote from './InnerNote/DrawerNote';
 import './note.css'
+import DrawerSIdeBar from './InnerNote/DrawerSIdeBar';
 
 
 export default function Notes() {
@@ -16,7 +16,7 @@ export default function Notes() {
     <div className='container'>
       <li className="sideBtn" onClick={toggleDrawer(true)}>Notes</li>
       <Drawer open={open} onClose={toggleDrawer(false)}>
-        {<DrawerNote/>}
+        {<DrawerSIdeBar/>}
       </Drawer>
     </div>
   )

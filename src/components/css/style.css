@@ -481,5 +481,23 @@
 .dash-border .two{
  right: 20rem;
 }
+.dashboard .one{
+  width: -webkit-fill-available;
+}
+
+.dashboard .two{
+  display: flex;
+  gap: 10px
+}
+.userDash-icon{
+  background-color: var(--primary);
+  padding: 8px;
+  border-radius: 10px;
+  color: var(--dark) !important;
+}
+.userDash-icon:hover{
+  background-color: var(--reverse);
+  color: var(--dark) !important;
+}
 
 

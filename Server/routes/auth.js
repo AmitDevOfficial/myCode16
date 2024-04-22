@@ -162,17 +162,7 @@ router.delete("/deleteuser/:id", fetchUser, async (req, res) => {
     }
 })
 
-// router.get("/finduser/:id", async (req, res) => {
 
-//     try {
-//         const user = await User.findById(req.params.id);
-//         return res.status(200).json(user);
-//     }
-//     catch (error) {
-//         console.error(error.message);
-//         res.status(500).json({Error: "Internal Server Error"});
-//     }
-// })
 
 module.exports = router
 
