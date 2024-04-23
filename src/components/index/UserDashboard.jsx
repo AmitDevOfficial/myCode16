@@ -3,9 +3,12 @@ import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import DeleteIcon from '@mui/icons-material/Delete';
 import userContext from '../../Context/ContextUser/userContext';
 import { useNavigate } from 'react-router-dom';
-import DeleteUserPopUp from './DeleteUserPopUp';
 
 export default function UserDashboard() {
+
+  
+
+
   const navigate = useNavigate();
   const context = useContext(userContext)
   const { user, getUser, deleteUser } = context;
@@ -25,7 +28,7 @@ export default function UserDashboard() {
 
   const handleDeleteUser = async () => {
     try {
-      const confirmed = window.confirm("Are you sure you want to delete this user?");
+      const confirmed = window.confirm("Are you sure you want to delete your Account ?");
       if (confirmed) {
         await deleteUser(user._id);
         handelOnLogout();
