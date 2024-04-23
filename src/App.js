@@ -19,6 +19,7 @@ import UserDashboard from './components/index/UserDashboard';
 import Footer from './components/header/Footer';
 import Htmlhome from './components/Courses/Html/InnerCourse/Htmlhome';
 import Notes from './components/Pages/Notes/Notes';
+import UserState from './Context/ContextUser/UserState';
   
 
 
@@ -41,6 +42,7 @@ function App() {
   return (
     <>
 
+    <UserState>
       <BrowserRouter>
         <Header mode={mode} toggleMode={toggleMode} />
         <Routes>
@@ -62,7 +64,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-
+      </UserState>
     </>
   );
 }

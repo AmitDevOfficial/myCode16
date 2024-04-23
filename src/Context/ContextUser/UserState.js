@@ -1,28 +1,49 @@
-import React, {useState} from 'react';
-import UserContext from './userContext';
+import UserContext from "./userContext";
+import { useState } from "react";
 
 const UserState = (props) => {
     const host = "http://localhost:8000";
 
-    //Delete User--
-    const deleteUser = async(id) => {
-        const response = await fetch(`${host}/api/auth/deleteuser/${id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "auth-Token": loaclStorage.getItem("token")
-            },
-        })
-        const json = response.json();
-        console.log(json);
-        console.log("I am Deleting my Account" + id);
-    }
+  const userInitial = []
 
-    return (
-        <UserContext.Provider value={{ deleteUser }}>
-            {props.children}
-        </UserContext.Provider>
-    )
+  const [user, setUser] = useState(userInitial)
+
+  //Get all note
+  const getUser = async (name, email, password) => {
+
+    //API Call--
+    const response = await fetch(`${host}/api/auth/getuser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token")
+      },
+    });
+    const json = await response.json()
+    console.log(json)
+    setUser(json);
+  }
+
+ 
+   //Delete User--
+   const deleteUser = async(id) => {
+    const response = await fetch(`${host}/api/auth/deleteuser/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-Token": localStorage.getItem("token")
+        },
+    })
+    
+    const json = response.json();
+    console.log(json);
+    console.log("I am Deleting my Account" + id);
 }
 
-export default UserState;
+    return (
+       <UserContext.Provider value={{user, getUser, deleteUser}}>
+        {props.children}
+       </UserContext.Provider>
+    )
+}
+export default UserState

@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import SignUp from './SignUp';
 
 Modal.setAppElement('#root');
 
@@ -85,9 +86,11 @@ export default function Login(props) {
             console.log("Interanl Server Error")
         }
     }
+
+   
     return (
         <div className='boxModal'>
-            <li  onClick={openModal}>{props.login}</li>
+            <li onClick={openModal}>{props.login}</li>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -100,8 +103,8 @@ export default function Login(props) {
                     <CloseIcon onClick={closeModal} />
                 </div>
 
-                <div className='login-form btn'>
-                    <p>You Don't have an Account? <span>Sign Up</span></p>
+               <div className='login-form btn'>
+                    <p>You Don't have an Account? <span><SignUp signup="Sign Up" /></span></p>
                     <div className="login-socialBtn">
                         <div className="login-socialBtn-first">
                             <button style={{ marginRight: "20px" }} ><Link to="/facebook">Google <GoogleIcon fontSize="small" /></Link></button>

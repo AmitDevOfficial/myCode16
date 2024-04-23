@@ -397,6 +397,14 @@
   color: var(--reverse);
 }
 
+.boxModal li{
+  list-style: none;
+}
+
+.login-form span{
+  color: var(--primary);
+  font-weight: 600;
+}
 .login-main{
   display: flex;
   justify-content: space-between;
@@ -415,11 +423,10 @@
   border-radius: 8px;
   border: 2px solid var(--primary);
 }
-
-.login-form span{
-  color: var(--primary);
+.login-form p{
+  display: flex;
+  gap: 10px;
 }
-
 .ReactModal__Content{
   background-color: var(--dark) !important;
   border: 1px solid var(--primary)

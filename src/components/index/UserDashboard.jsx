@@ -1,29 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import DeleteIcon from '@mui/icons-material/Delete';
+import userContext from '../../Context/ContextUser/userContext';
+import { useNavigate } from 'react-router-dom';
+import DeleteUserPopUp from './DeleteUserPopUp';
 
 export default function UserDashboard() {
-
-  const host = "http://localhost:8000"
-  const userInitial = []
-
-  const [user, setUser] = useState(userInitial)
-
-  //Get all note
-  const getUser = async (name, email, password) => {
-
-    //API Call--
-    const response = await fetch(`${host}/api/auth/getuser`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("token")
-      },
-    });
-    const json = await response.json()
-    console.log(json)
-    setUser(json);
-  }
+  const navigate = useNavigate();
+  const context = useContext(userContext)
+  const { user, getUser, deleteUser } = context;
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -32,6 +17,28 @@ export default function UserDashboard() {
 
     // eslint-disable-next-line
   }, []);
+
+  const handelOnLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/")
+  }
+
+  const handleDeleteUser = async () => {
+    try {
+      const confirmed = window.confirm("Are you sure you want to delete this user?");
+      if (confirmed) {
+        await deleteUser(user._id);
+        handelOnLogout();
+        navigate('/');
+      }
+      
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
+  
+
+
 
   return (
     <div className="container dashboard">
@@ -42,11 +49,11 @@ export default function UserDashboard() {
           <p>Email: {user.email}</p>
           <p>Registration Date: {user.date}</p>
         </div>
-        <div className="two" style={{justifyContent:"center"}}>
-          <EditCalendarIcon className='userDash-icon'/>
-          <DeleteIcon className='userDash-icon'/>
+        <div className="two" style={{ justifyContent: "center" }}>
+          <EditCalendarIcon className='userDash-icon' />
+          <DeleteIcon className='userDash-icon' onClick={handleDeleteUser} />
         </div>
       </div>
     </div>
   )
-}
+} 
