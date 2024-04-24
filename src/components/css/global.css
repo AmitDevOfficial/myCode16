@@ -21,11 +21,12 @@ body{
 }
 :root{
     --reverse: #000000;
-    --dark: #ffffff;
     --primary: #9333ea;
     --secondary: #221d1d;
     --tertiary: #1f2937;
     --sidebar: #9333ea;
+    --sidebarfont: #ffffff;
+    --dark: #ffffff;
     /* --overlay:  */
   }
 
@@ -34,8 +35,9 @@ body{
     --primary: #c17eff;
     --secondary: #c17eff;
     --tertiary: #eaeef2;
-    --dark: #000000;
     --sidebar: #000000;
+    --sidebarfont: #deb9ff;
+    --dark: #000000;
 
   }
   img{

@@ -20,7 +20,8 @@ import Footer from './components/header/Footer';
 import Htmlhome from './components/Courses/Html/InnerCourse/Htmlhome';
 import Notes from './components/Pages/Notes/Notes';
 import UserState from './Context/ContextUser/UserState';
-  
+import NoteState from './Context/ContextNote/NoteState';
+
 
 
 function App() {
@@ -42,28 +43,30 @@ function App() {
   return (
     <>
 
-    <UserState>
-      <BrowserRouter>
-        <Header mode={mode} toggleMode={toggleMode} />
-        <Routes>
-          <Route exact path="/" element={<Banner />}></Route>
-          <Route exact path="/course" element={<Course />}></Route>
-          <Route exact path="/toutrial" element={<Toutrial />}></Route>
-          <Route exact path="/blog" element={<Blog />}></Route>
-          <Route exact path="/contact" element={<Contact />}></Route>
-          <Route exact path="/notes" element={<Notes />}></Route>
-          <Route exact path="/user" element={<UserDashboard />}></Route>
+      <UserState>
+        <NoteState>
+          <BrowserRouter>
+            <Header mode={mode} toggleMode={toggleMode} />
+            <Routes>
+              <Route exact path="/" element={<Banner />}></Route>
+              <Route exact path="/course" element={<Course />}></Route>
+              <Route exact path="/toutrial" element={<Toutrial />}></Route>
+              <Route exact path="/blog" element={<Blog />}></Route>
+              <Route exact path="/contact" element={<Contact />}></Route>
+              <Route exact path="/notes" element={<Notes />}></Route>
+              <Route exact path="/user" element={<UserDashboard />}></Route>
 
-          <Route exact path="/html" element={<Html />}></Route>
-          <Route exact path="/html_home" element={<Htmlhome />}></Route>
-          <Route exact path="/css" element={<Css />}></Route>
-          <Route exact path="/jquery" element={<Jquery />}></Route>
-          <Route exact path="/jquery" element={<Jquery />}></Route>
-          <Route exact path="/python" element={<Python />}></Route>
-          <Route exact path="/cms" element={<Cms />}></Route>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+              <Route exact path="/html" element={<Html />}></Route>
+              <Route exact path="/html_home" element={<Htmlhome />}></Route>
+              <Route exact path="/css" element={<Css />}></Route>
+              <Route exact path="/jquery" element={<Jquery />}></Route>
+              <Route exact path="/jquery" element={<Jquery />}></Route>
+              <Route exact path="/python" element={<Python />}></Route>
+              <Route exact path="/cms" element={<Cms />}></Route>
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </NoteState>
       </UserState>
     </>
   );

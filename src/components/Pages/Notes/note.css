@@ -28,33 +28,45 @@
 .drawerMain{
     display: flex;
 }
-.drawerBtn-main{
+/* .drawerBtn-main{
     width: 350px;
-}
+} */
 
 .drawerBtnDlt-main{
    float: end;
+}
+.drawerBtn-main input{
+    width: 43%;
+    margin-right: 7px;
+    border: none;
+    border-bottom: 2px solid var(--primary);
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    min-width: 0px !important; 
+    padding: 0 !important;
 }
 .css-10hburv-MuiTypography-root {
     font-size: 14px !important;
     color: var(--dark) !important;
     font-weight: 600 !important;
-    padding-right: 10px;
 }
 .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
     background-color: var(--dark) !important;
     border-right: 2px solid var(--primary);
 }
+
 /*-----------------DrawerNoteItem------------------*/
-.drawerCard{
-    display: flex;
-    gap: 10px;
-}
+
+
 .dragging{
     border: 2px solid var(--primary);
     border-radius: 20px;
     padding: 10px;
-    width: 50%;
+    width: 42%;
 }
 .dragging b{ 
     color: var(--primary);

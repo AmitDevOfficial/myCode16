@@ -1,16 +1,35 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import Button from '@mui/material/Button';
-import ListItemText from '@mui/material/ListItemText';
-import AddIcon from '@mui/icons-material/Add';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import DrawerNotes from './DrawerNotes';
+import AddNote from './AddNote';
+import { useNavigate } from 'react-router-dom';
+import noteContext from "../../../../Context/ContextNote/noteContext"
 
 
-export default function DrawerSIdeBar() {
+
+export default function DrawerSIdeBar(props) {
+
+    const navigate = useNavigate();
+    const context = useContext(noteContext);
+
+
+    const { notes, getNote } = context;
+
+
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            getNote()
+        }
+        else {
+            navigate("/login");
+        }
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <div className='drawerSlide'>
@@ -20,15 +39,14 @@ export default function DrawerSIdeBar() {
                     {['Add Note'].map((text) => (
                         <ListItem key={text} disablePadding>
                             <div className='drawerMain'>
-                                <div className="drawerBtn-main">
-                                    <Button className='drawerBtn'>
-                                        <AddIcon style={{ color: "var(--dark)" }} />
-                                        <ListItemText className='drawerTxt' primary={text} />
-                                    </Button>
+                                <div className="drawerBtn-main" >
+
+                                    <AddNote />
+
                                 </div>
                                 <div className="drawerBtnDlt-main">
                                     <Button className='drawerBtnDlt'>
-                                        <DeleteOutlineIcon fontSize="large" style={{ color: "var(--primary)" }} />
+                                        <DeleteOutlineIcon sx={{ fontSize: 30 }} style={{ color: "var(--primary)" }} />
                                     </Button>
                                 </div>
                             </div>
@@ -38,7 +56,11 @@ export default function DrawerSIdeBar() {
                 <Divider style={{ borderColor: "var(--primary)" }} />
 
                 <div className="drawerNoteList">
-                    <DrawerNotes/>
+                    <h2>Your Notes will be Here</h2>
+                        {notes.length === 0 && "No Notes to Display"}
+                    <div className="drawerNoteItem">
+                        {notes.map((note) => { return <DrawerNotes key={note._id} note={note} /> })}
+                    </div>
                 </div>
             </Box>
         </div>

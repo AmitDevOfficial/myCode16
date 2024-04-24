@@ -19,14 +19,13 @@
     /* overflow-y: auto; */
 }
 
-
 .sideBar ul li {
     list-style: none;
 }
 
 .sideBar ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--sidebarfont);
     line-height: 37px;
 }
 

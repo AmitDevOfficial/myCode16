@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Draggable from 'react-draggable';
+import noteContext from "../../../../Context/ContextNote/noteContext"
 
 
-export default function DrawerNotes() {
+export default function DrawerNotes(props) {
+
+    const {note} = props;
+
     const handleStart = (e, data) => {
         console.log('Drag started');
     };
@@ -16,7 +20,6 @@ export default function DrawerNotes() {
     };
     return (
         <>
-            <h2>Your Notes will be Here</h2>
             <div className="drawerNoteItem">
                 <div className="drawerCard">
                     <Draggable
@@ -31,24 +34,8 @@ export default function DrawerNotes() {
                     >
 
                         <div className='dragging handle'>
-                           <b>Add Title</b>
-                            <p>Add Description...</p>
-                        </div>
-                    </Draggable>
-                    <Draggable
-                        axis="both"
-                        handle=".handle"
-                        defaultPosition={{ x: 0, y: 0 }}
-                        position={null}
-                        scale={1}
-                        onStart={handleStart}
-                        onDrag={handleDrag}
-                        onStop={handleStop}
-                    >
-
-                        <div className='dragging handle'>
-                           <b>Add Title</b>
-                            <p>Add Description...</p>
+                           <b>{note.title}</b>
+                            <p>{note.description}</p>
                         </div>
                     </Draggable>
                 </div>

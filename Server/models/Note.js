@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+const moment = require("moment")
 
 const NoteSchema = new Schema({
     user: {
@@ -14,13 +15,9 @@ const NoteSchema = new Schema({
         type: String,
         required: true
     },
-    tag: {
-        type: String,
-        required: true
-    },
     date: {
         type: String,
-        default: Date.now
+        default: moment().format('Do MMMM YYYY, dddd , h:mm:ss a')
     }
 })
  
