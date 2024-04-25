@@ -1,7 +1,13 @@
 .drawerNote{
     padding: 20px;
 }
-
+.drawerNote h2{
+    margin: 0;
+    margin-bottom: 20px;
+}
+.drawerNoteList_heading{
+    color: var(--primary);
+}
 .drawerSlide {
     overflow-x: hidden;
     overflow-y: auto; 
@@ -61,16 +67,29 @@
 
 /*-----------------DrawerNoteItem------------------*/
 
-
 .dragging{
     border: 2px solid var(--primary);
     border-radius: 20px;
     padding: 10px;
-    width: 42%;
+    width: 43%;
+    /* display: flex; */
+    cursor: grabbing;
 }
+
 .dragging b{ 
     color: var(--primary);
 }
 .dragging p{ 
     color: var(--reverse);
+}
+
+.noteitemDlt:hover{
+    filter: hue-rotate(83deg);
+}
+.noteitemEdit:hover{
+    filter: hue-rotate(228deg);
+}
+
+.addNoteItem:hover{
+    background-color: #25c525;
 }

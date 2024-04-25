@@ -8,7 +8,7 @@ const UserState = (props) => {
 
   const [user, setUser] = useState(userInitial)
 
-  //Get all note
+  //Get user
   const getUser = async (name, email, password) => {
 
     //API Call--

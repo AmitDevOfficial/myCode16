@@ -16,9 +16,9 @@ export default function DrawerSIdeBar(props) {
 
     const navigate = useNavigate();
     const context = useContext(noteContext);
+   
 
-
-    const { notes, getNote } = context;
+    const { notes, getNote, deleteAllNote } = context;
 
 
     useEffect(() => {
@@ -31,6 +31,11 @@ export default function DrawerSIdeBar(props) {
         // eslint-disable-next-line
     }, []);
 
+    const handleDeleteAllNotes = async () => {
+        await deleteAllNote(); // Wait for notes to be deleted
+        getNote(); // Fetch notes again after deletion
+    };
+    
     return (
         <div className='drawerSlide'>
             <Box className="drawerNote" sx={{ width: 400 }} role="presentation">
@@ -46,7 +51,7 @@ export default function DrawerSIdeBar(props) {
                                 </div>
                                 <div className="drawerBtnDlt-main">
                                     <Button className='drawerBtnDlt'>
-                                        <DeleteOutlineIcon sx={{ fontSize: 30 }} style={{ color: "var(--primary)" }} />
+                                        <DeleteOutlineIcon className="noteitemDlt" sx={{ fontSize: 30 }} style={{ color: "var(--primary)" }} onClick={ handleDeleteAllNotes}/>
                                     </Button>
                                 </div>
                             </div>
@@ -56,7 +61,7 @@ export default function DrawerSIdeBar(props) {
                 <Divider style={{ borderColor: "var(--primary)" }} />
 
                 <div className="drawerNoteList">
-                    <h2>Your Notes will be Here</h2>
+                    <h3 className='drawerNoteList_heading'>Your Notes will be Here</h3>
                         {notes.length === 0 && "No Notes to Display"}
                     <div className="drawerNoteItem">
                         {notes.map((note) => { return <DrawerNotes key={note._id} note={note} /> })}

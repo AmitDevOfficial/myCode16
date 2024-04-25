@@ -16,13 +16,13 @@ export default function NoteState(props) {
                 'Content-Type': 'application/json',
                 'auth-token': localStorage.getItem("token")
             },
-            body: JSON.stringify({title, description}),
+            body: JSON.stringify({ title, description }),
         });
 
         const note = await response.json();
-        setNotes(notes.concat(note)); 
-    } 
-    
+        setNotes(notes.concat(note));
+    }
+
     //GET Note--
     const getNote = async (title, description) => {
         const response = await fetch(`${host}/api/notes/fetchallnotes`, {
@@ -36,11 +36,45 @@ export default function NoteState(props) {
         console.log(json);
         setNotes(json)
     }
-  return (
-    <NoteContext.Provider value={ {notes, addNote, getNote} }>
-        {props.children}
-    </NoteContext.Provider>
-  )
+
+    //DELETE Notes one by one with id--
+    const deleteNote = async (id) => {
+        const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token")
+            }
+        })
+        const json = await response.json();
+        console.log(json)
+
+        console.log("I am Deleting my Notes" + id);
+        const newNotes = notes.filter((note) => { return note._id !== id });
+        setNotes(newNotes);
+    }
+
+     //DELETE All Notes--
+     const deleteAllNote = async (id) => {
+        const response = await fetch(`${host}/api/notes/deletenote`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token")
+            }
+        })
+        const json = await response.json();
+        console.log(json)
+
+        console.log("I am Deleting my All Notes");
+        const newNotes = notes.filter((note) => { return note._id !== id });
+        setNotes(newNotes);
+    }
+    return (
+        <NoteContext.Provider value={{ notes, addNote, getNote, deleteNote, deleteAllNote }}>
+            {props.children}
+        </NoteContext.Provider> 
+    )
 
 
 }
