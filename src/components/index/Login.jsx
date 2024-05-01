@@ -6,6 +6,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SignUp from './SignUp';
+import AddReaction from '@mui/icons-material/AddReaction';
 
 Modal.setAppElement('#root');
 
@@ -117,7 +118,7 @@ export default function Login(props) {
                             <button><Link to="/google">FaceBook <FacebookIcon fontSize="small" /></Link></button>
                         </div>
                         <div className="login-socialBtn-first">
-                            <button style={{ marginRight: "20px" }}><Link to="/instagram">Discord</Link></button>
+                            <button style={{ marginRight: "20px" }}><Link to="/instagram">Discord <AddReaction/></Link></button>
                             <button><Link to="/github">GitHub <GitHubIcon fontSize="small" /></Link></button>
                         </div>
                     </div>
