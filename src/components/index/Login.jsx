@@ -33,6 +33,8 @@ export default function Login(props) {
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
+    const [error, setError] = useState(null);
+
     function openModal() {
         setIsOpen(true);
     }
@@ -67,9 +69,13 @@ export default function Login(props) {
                 },
                 body: JSON.stringify({ email: cred.email, password: cred.password }),
             });
-            if (!response.ok) {
-                throw new Error('Login failed');
-            }
+
+            /*-----------We can not add ----Highly Recommneded-----Beacuse these code not show the error msg in the user------*/
+
+            // if (!response.ok) {
+            //     throw new Error('Login failed');
+            // }
+
             const json = await response.json();
             console.log(json);
             if (json.success) {
@@ -79,7 +85,7 @@ export default function Login(props) {
                 navigate("/");
                 closeModal();
             } else {
-                // alert("Invaild Credintials, Please try again...")
+                setError("Invaild Credintials, Please try again...")
                 console.log("Not Login")
             }
         } catch (error) {
@@ -104,7 +110,7 @@ export default function Login(props) {
                 </div>
 
                <div className='login-form btn'>
-                    <p>You Don't have an Account? <span><SignUp signup="Sign Up" /></span></p>
+                    <p className='choiceAcnt'>You Don't have an Account? <span><SignUp signup="Sign Up" /></span></p>
                     <div className="login-socialBtn">
                         <div className="login-socialBtn-first">
                             <button style={{ marginRight: "20px" }} ><Link to="/facebook">Google <GoogleIcon fontSize="small" /></Link></button>
@@ -120,6 +126,7 @@ export default function Login(props) {
                         <input type="text" placeholder='Enter your Email' id="email" name="email" value={cred.email} onChange={onChange} required/><br />
                         <input type="text" placeholder='Enter your Password' id="password" name="password"  value={cred.password} onChange={onChange} required/><br />
                         <button type="submit" className='sbtn'>Login</button>
+                        {<spa style={{color:"red", fontSize:"16px"}}>{error}</spa>}
                     </form>
                 </div>
             </Modal>

@@ -423,8 +423,8 @@
   border-radius: 8px;
   border: 2px solid var(--primary);
 }
-.login-form p{
-  display: flex;
+.login-form .choiceAcnt{
+  display: inline-flex;
   gap: 10px;
 }
 .ReactModal__Content{

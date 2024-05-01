@@ -3,15 +3,24 @@ import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import DeleteIcon from '@mui/icons-material/Delete';
 import userContext from '../../Context/ContextUser/userContext';
 import { useNavigate } from 'react-router-dom';
+import noteContext from '../../Context/ContextNote/noteContext';
 
 export default function UserDashboard() {
 
-  
+
 
 
   const navigate = useNavigate();
   const context = useContext(userContext)
-  const { user, getUser, deleteUser } = context;
+  const { user, getUser, deleteUser} = context;
+
+  const context1 = useContext(noteContext)
+  const { deleteAllNote } = context1;
+
+
+  const handleDeleteAllNotes = async () => {
+    await deleteAllNote(); // Wait for notes to be deleted
+  };
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -31,15 +40,16 @@ export default function UserDashboard() {
       const confirmed = window.confirm("Are you sure you want to delete your Account ?");
       if (confirmed) {
         await deleteUser(user._id);
+        handleDeleteAllNotes();
         handelOnLogout();
         navigate('/');
       }
-      
+
     } catch (error) {
       console.error("Error deleting user:", error);
     }
   };
-  
+
 
 
 

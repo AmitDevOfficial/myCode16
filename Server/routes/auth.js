@@ -66,6 +66,8 @@ router.post("/login", [
     body("password", "Enter a vaild Password").exists(),
 ], async (req, res) => {
     let success = false;
+
+    //if there are errors, return bad request and the errors--
     const error = validationResult(req);
     if (!error.isEmpty()) {
         return res.status(400).json({ error: error.array() });
@@ -83,7 +85,8 @@ router.post("/login", [
         //Check password with bycrpt -- if password is not match then they show the error--
         const passwordCompare = await bcrypt.compare(password, user.password)
         if (!passwordCompare) {
-            return res.status(400).json({ error: "Please try again with the correct credientials" });
+            success = false
+            return res.status(400).json({ success, error: "Please try again with the correct credientials" });
         }
         // return res.status(200).json({ success: "you have been successfully Login" });
 

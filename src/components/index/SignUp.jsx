@@ -96,7 +96,7 @@ export default function SignUp(props) {
                 </div>
 
                 <div className='login-form btn'>
-                    <p>Already have an account? <span><Login login="Login" /></span></p>
+                    <p className='choiceAcnt'>Already have an account? <span><Login login="Login" /></span></p>
                     <div className="login-socialBtn">
                         <div className="login-socialBtn-first">
                             <button style={{ marginRight: "20px" }} ><Link to="/facebook">Google <GoogleIcon fontSize="small" /></Link></button>

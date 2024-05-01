@@ -57,9 +57,10 @@ router.delete("/deletenote/:id", fetchUser, async(req, res) => {
 })
 
 //Route5: Delete Notes from (Own User Notes) using DELETE ("api/notes/deletenote/:id"). Login Require--
+//Route5: Delete Notes from (Own User Notes) using DELETE ("api/notes/deletenote/:id"). Login Require--
 router.delete("/deletenote", fetchUser, async(req, res) => {
     try {
-        const note = await Note.deleteMany()
+        const note = await Note.deleteMany({user: req.user.id})
         res.status(200).json( {msg: "All Note Deleted SuccessFully"});
         console.log( note, "All Note Deleted Successfully")   
     } catch (error) {

@@ -55,7 +55,7 @@ export default function NoteState(props) {
     }
 
      //DELETE All Notes--
-     const deleteAllNote = async (id) => {
+     const deleteAllNote = async () => {
         const response = await fetch(`${host}/api/notes/deletenote`, {
             method: "DELETE",
             headers: {
@@ -65,11 +65,9 @@ export default function NoteState(props) {
         })
         const json = await response.json();
         console.log(json)
-
         console.log("I am Deleting my All Notes");
-        const newNotes = notes.filter((note) => { return note._id !== id });
-        setNotes(newNotes);
     }
+    
     return (
         <NoteContext.Provider value={{ notes, addNote, getNote, deleteNote, deleteAllNote }}>
             {props.children}
