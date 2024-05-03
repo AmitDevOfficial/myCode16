@@ -18,6 +18,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    image: {
+        data: Buffer, 
+        type: String 
+    },
     date: {
         type: String,
         default: moment().format('Do MMMM YYYY, dddd , h:mm:ss a')

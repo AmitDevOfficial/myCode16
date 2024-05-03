@@ -9,7 +9,7 @@ const UserState = (props) => {
   const [user, setUser] = useState(userInitial)
 
   //Get user
-  const getUser = async (name, email, password) => {
+  const getUser = async (name, email, password, image) => {
 
     //API Call--
     const response = await fetch(`${host}/api/auth/getuser`, {

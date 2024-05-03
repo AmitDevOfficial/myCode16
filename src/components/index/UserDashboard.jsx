@@ -50,9 +50,6 @@ export default function UserDashboard() {
     }
   };
 
-
-
-
   return (
     <div className="container dashboard">
       <h1 className='dash-heading'>Welcome To Your Dashboard - {user.name}</h1>
@@ -61,6 +58,9 @@ export default function UserDashboard() {
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
           <p>Registration Date: {user.date}</p>
+        </div>
+        <div style={{border: "1px solid black"}}>
+          <img src={user.image} alt="Loading" />
         </div>
         <div className="two" style={{ justifyContent: "center" }}>
           <EditCalendarIcon className='userDash-icon' />

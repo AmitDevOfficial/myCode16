@@ -21,6 +21,7 @@ import Htmlhome from './components/Courses/Html/InnerCourse/Htmlhome';
 import Notes from './components/Pages/Notes/Notes';
 import UserState from './Context/ContextUser/UserState';
 import NoteState from './Context/ContextNote/NoteState';
+import Admin from './components/Admin/Admin';
 
 
 
@@ -66,6 +67,7 @@ function App() {
             </Routes>
             <Footer />
           </BrowserRouter>
+          <Admin/>
         </NoteState>
       </UserState>
     </>

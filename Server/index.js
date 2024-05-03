@@ -1,20 +1,27 @@
 const connectToMongoDB = require("./db")
 const express = require("express");
+const authRouter = require("./routes/auth")
+const notesRouter = require("./routes/notes")
 var cors = require('cors')
+const bodyParser = require('body-parser');
+const path = require('path');
 
 connectToMongoDB();
 const app = express();
 const port = 8000;
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(cors())
 
 //we can use this line beacuse we have to push the data from the database and this is a middle ware and also we can get the value to push the testing api in thunder-client
 app.use(express.json())
 
+// app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/auth", require('./routes/auth'));
-app.use("/api/notes", require('./routes/notes'));
+app.use("/api/auth", authRouter);
+app.use("/api/notes", notesRouter);
 
 
 app.listen(port, () => {    

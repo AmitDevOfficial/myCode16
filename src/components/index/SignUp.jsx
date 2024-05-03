@@ -52,6 +52,8 @@ export default function SignUp(props) {
     const [cred, setCred] = useState({name: "", email: "", password: ""})
     const navigate = useNavigate();
 
+    const [proimage, setProimage] = useState({image: ""});
+
     const onChange = (e) =>{
         setCred({...cred, [e.target.name]: e.target.value})
     }
@@ -59,13 +61,14 @@ export default function SignUp(props) {
     const handelOnSubmit = async(e) => {
         e.preventDefault();
         const {name, email, password} = cred;
+        const {image} = proimage;
 
         const response = await fetch(`${host}/api/auth/createuser`,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({name, email, password}),
+            body: JSON.stringify({name, email, password, image}),
         })
         const json = await response.json();
         console.log(json);
@@ -109,10 +112,11 @@ export default function SignUp(props) {
                         </div>
                     </div>
                     <p className='or'>OR</p>
-                    <form onSubmit={handelOnSubmit}>
+                    <form onSubmit={handelOnSubmit} enctype="multipart/form-data">
                         <input type="text" placeholder='Enter your Name' id="name" name="name" onChange={onChange} required/><br />
                         <input type="text" placeholder='Enter your Email' id="email" name="email" onChange={onChange} required/><br />
                         <input type="text" placeholder='Enter your Password' id="password" name="password" onChange={onChange} required/><br />
+                        <input type="file" placeholder='Enter your Password' id="image" name="image"  onChange={(e) => setProimage(e.target.files[0])}  /><br />
                         <button type="submit" className='sbtn'>Sign Up</button>
                     </form>
                 </div>
