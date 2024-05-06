@@ -5,10 +5,10 @@ import userContext from '../../Context/ContextUser/userContext';
 import { useNavigate } from 'react-router-dom';
 import noteContext from '../../Context/ContextNote/noteContext';
 
+
+
+
 export default function UserDashboard() {
-
-
-
 
   const navigate = useNavigate();
   const context = useContext(userContext)
@@ -60,7 +60,7 @@ export default function UserDashboard() {
           <p>Registration Date: {user.date}</p>
         </div>
         <div style={{border: "1px solid black"}}>
-          <img src={user.image} alt="Loading" />
+        {<img src={`/uploads/${user.image}`} alt="User" />}
         </div>
         <div className="two" style={{ justifyContent: "center" }}>
           <EditCalendarIcon className='userDash-icon' />

@@ -6,9 +6,10 @@ const jwt = require('jsonwebtoken');
 //This is secret jwt secret token-- 
 const JWT_SECRET = "Code16ankit$amit"
 
+
 //Route-1: Create a user using POST "api/auth/createuser" -- No Login Required--
 async function createUser (req, res) {
-        console.log(req);
+        // console.log(req);
         let success = false;
         //if there are the error, return bad request and the errors--
         const error = validationResult(req);
@@ -24,15 +25,22 @@ async function createUser (req, res) {
                 return res.status(400).json({ success, Error: 'Error : Sorry User already Exit in this same email' });
             }
 
+            if (!req.file) {
+                console.log("No file uploaded");
+                return res.status(400).send('No files were uploaded.');
+            }
+            
+            console.log("Uploaded file:", req.file);
             //Adding bcrypt to add salt and hash to secure user password--
             const salt = await bcrypt.genSalt(10);
             const secPassword = await bcrypt.hash(req.body.password, salt);
+            
             //Create a New User--
             user = await User.create({
                 name: req.body.name,
                 email: req.body.email,
                 password: secPassword,
-                image:  req.file ? req.file.path : null
+                image: req.file.filename
             })
             
             // return res.status(201).json({ msg: "User created Successfully" });

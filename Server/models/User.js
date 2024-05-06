@@ -19,8 +19,8 @@ const userSchema = new Schema({
         required: true
     },
     image: {
-        data: Buffer, 
-        type: String 
+        type: String,
+        default: "/uploads/proImg.png"
     },
     date: {
         type: String,
