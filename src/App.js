@@ -49,25 +49,25 @@ function App() {
           <BrowserRouter>
             <Header mode={mode} toggleMode={toggleMode} />
             <Routes>
-              <Route exact path="/" element={<Banner />}></Route>
-              <Route exact path="/course" element={<Course />}></Route>
-              <Route exact path="/toutrial" element={<Toutrial />}></Route>
-              <Route exact path="/blog" element={<Blog />}></Route>
-              <Route exact path="/contact" element={<Contact />}></Route>
-              <Route exact path="/notes" element={<Notes />}></Route>
-              <Route exact path="/user" element={<UserDashboard />}></Route>
+              <Route exact path="/" element={<Banner />}/>
+              <Route exact path="/course" element={<Course />}/>
+              <Route exact path="/toutrial" element={<Toutrial />}/>
+              <Route exact path="/blog" element={<Blog />}/>
+              <Route exact path="/contact" element={<Contact />}/>
+              <Route exact path="/notes" element={<Notes />}/>
+              <Route exact path="/user" element={<UserDashboard />}/>
 
-              <Route exact path="/html" element={<Html />}></Route>
-              <Route exact path="/html_home" element={<Htmlhome />}></Route>
-              <Route exact path="/css" element={<Css />}></Route>
-              <Route exact path="/jquery" element={<Jquery />}></Route>
-              <Route exact path="/jquery" element={<Jquery />}></Route>
-              <Route exact path="/python" element={<Python />}></Route>
-              <Route exact path="/cms" element={<Cms />}></Route>
+              <Route exact path="/html" element={<Html />}/>
+              <Route exact path="/html_home" element={<Htmlhome />}/>
+              <Route exact path="/css" element={<Css />}/>
+              <Route exact path="/jquery" element={<Jquery />}/>
+              <Route exact path="/jquery" element={<Jquery />}/>
+              <Route exact path="/python" element={<Python />}/>
+              <Route exact path="/cms" element={<Cms />}/>
+              <Route exact path="/admin" element={<Admin/>}></Route>
             </Routes>
             <Footer />
           </BrowserRouter>
-          <Admin/>
         </NoteState>
       </UserState>
     </>

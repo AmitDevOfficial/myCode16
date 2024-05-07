@@ -20,11 +20,16 @@ const userSchema = new Schema({
     },
     image: {
         type: String,
-        default: "/uploads/proImg.png"
+        default: "/uploads/1715061180820-.jpeg"
     },
     date: {
         type: String,
         default: moment().format('Do MMMM YYYY, dddd , h:mm:ss a')
+    },
+    isAdmin: {
+        type: Boolean,
+        required: true,
+        default: false,
     }
 })
 

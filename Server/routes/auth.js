@@ -1,18 +1,20 @@
 const express = require('express');
+const app = express();
 const router = express.Router();
 const { body } = require('express-validator');
 const { createUser, login, getUser, updateUser, deleteUser } = require('../controller/authUser');
 const fetchUser = require("../middleware/fetchUser")
 const multer = require("multer");
+const path = require("path")
 
-
+app.use(express.static("public"))
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/uploads/');
   },
   filename: function (req, file, cb) {
-   const name = Date.now()+"-"+file.originalname;
+   const name = Date.now()+"-"+ path.extname(file.originalname);
    cb(null,name);
   }
 })

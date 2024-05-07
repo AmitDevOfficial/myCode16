@@ -468,6 +468,15 @@
 }
 
 /*------------------User DashBoard-------------------*/
+.proImage{
+  text-align: center;
+}
+.proImageUser {
+  border-radius: 61%;
+  width: 70%;
+  height: 90%;
+  border: 2px solid var(--primary);
+}
 .dash-heading {
   background: linear-gradient(to right, #a900ff 0%, #ff03a3f2 100%);
   -webkit-background-clip: text;

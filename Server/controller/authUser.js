@@ -25,7 +25,7 @@ async function createUser (req, res) {
                 return res.status(400).json({ success, Error: 'Error : Sorry User already Exit in this same email' });
             }
 
-            if (!req.file) {
+            if (!req.file ) {
                 console.log("No file uploaded");
                 return res.status(400).send('No files were uploaded.');
             }
@@ -34,13 +34,13 @@ async function createUser (req, res) {
             //Adding bcrypt to add salt and hash to secure user password--
             const salt = await bcrypt.genSalt(10);
             const secPassword = await bcrypt.hash(req.body.password, salt);
-            
+    
             //Create a New User--
             user = await User.create({
                 name: req.body.name,
                 email: req.body.email,
                 password: secPassword,
-                image: req.file.filename
+                image: req.file.filename,
             })
             
             // return res.status(201).json({ msg: "User created Successfully" });
@@ -54,6 +54,7 @@ async function createUser (req, res) {
             const authToken = jwt.sign(data, JWT_SECRET);
             success = true;
             res.status(201).json({ success, authToken });
+            console.log(user)
         }
         catch (error) {
             console.error(error.message);

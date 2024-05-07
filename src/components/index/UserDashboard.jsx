@@ -7,12 +7,12 @@ import noteContext from '../../Context/ContextNote/noteContext';
 
 
 
-
 export default function UserDashboard() {
+
 
   const navigate = useNavigate();
   const context = useContext(userContext)
-  const { user, getUser, deleteUser} = context;
+  const { user, getUser, deleteUser } = context;
 
   const context1 = useContext(noteContext)
   const { deleteAllNote } = context1;
@@ -37,6 +37,7 @@ export default function UserDashboard() {
 
   const handleDeleteUser = async () => {
     try {
+
       const confirmed = window.confirm("Are you sure you want to delete your Account ?");
       if (confirmed) {
         await deleteUser(user._id);
@@ -59,8 +60,10 @@ export default function UserDashboard() {
           <p>Email: {user.email}</p>
           <p>Registration Date: {user.date}</p>
         </div>
-        <div style={{border: "1px solid black"}}>
-        {<img src={`/uploads/${user.image}`} alt="User" />}
+        <div className="proImage">
+          {user.image && (
+            <img className="proImageUser" src={`http://localhost:8000/${user.image}`} alt="User" />
+          )}
         </div>
         <div className="two" style={{ justifyContent: "center" }}>
           <EditCalendarIcon className='userDash-icon' />

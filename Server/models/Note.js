@@ -20,5 +20,5 @@ const NoteSchema = new Schema({
         default: moment().format('Do MMMM YYYY, dddd , h:mm:ss a')
     }
 })
- 
-module.exports = mongoose.model("notes",NoteSchema)
+
+module.exports = mongoose.model("notes", NoteSchema)
