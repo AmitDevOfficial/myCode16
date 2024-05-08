@@ -42,13 +42,15 @@ async function createUser (req, res) {
                 password: secPassword,
                 image: req.file.filename,
             })
-            
+            console.log(user, "user dataaaaa")
             // return res.status(201).json({ msg: "User created Successfully" });
 
             //Using JWT Token -- User createed our account so we can give the auth token--
             const data = {
                 user: {
                     id: user.id,
+                    email : user.email,
+                    isAdmin : user.isAdmin
                 }
             }
             const authToken = jwt.sign(data, JWT_SECRET);
@@ -93,7 +95,9 @@ async function login(req, res){
 
         const data = {
             user: {
-                id: user.id
+                id: user.id,
+                email : user.email,
+                isAdmin : user.isAdmin
             }
         }
 

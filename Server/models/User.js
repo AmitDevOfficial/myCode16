@@ -20,7 +20,7 @@ const userSchema = new Schema({
     },
     image: {
         type: String,
-        default: "/uploads/1715061180820-.jpeg"
+        default: "./public/uploads/1715061180820-.jpeg"
     },
     date: {
         type: String,

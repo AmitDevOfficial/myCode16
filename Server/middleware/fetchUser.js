@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");    
 const JWT_SECRET = "Code16ankit$amit";
 
 const fetchUser = async(req, res, next) => {
@@ -10,6 +10,7 @@ const fetchUser = async(req, res, next) => {
     try {
 
         const data = jwt.verify(token, JWT_SECRET)
+        console.log(data,"data user")
         req.user = data.user;
     
 
