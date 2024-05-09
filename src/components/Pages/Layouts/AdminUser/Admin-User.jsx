@@ -3,7 +3,7 @@ import React from 'react'
 export default function AdminUser() {
   return (
     <div>
-      Hye i am the admin user
+     <h2>User Information</h2>
     </div>
   )
 }

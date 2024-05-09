@@ -39,7 +39,8 @@
     border: 2px solid var(--primary);
 }
 .adminRight{
-    padding: 20px;
+    padding: 10px;
+    margin: 0px;
 }
 .css-i4bv87-MuiSvgIcon-root{
     width: 2em !important;

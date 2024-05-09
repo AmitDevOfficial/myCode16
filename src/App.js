@@ -69,7 +69,7 @@ function App() {
               <Route exact path="/jquery" element={<Jquery />}/>
               <Route exact path="/python" element={<Python />}/>
               <Route exact path="/cms" element={<Cms />}/>
-              
+
               <Route exact path="/admin" element={<Admin/>}>
                 <Route exact path='user' element={<AdminUser/>}/>
                 <Route exact path='contact' element={<AdminContacts />}/>
