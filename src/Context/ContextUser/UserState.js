@@ -7,10 +7,11 @@ const UserState = (props) => {
   const userInitial = []
 
   const [user, setUser] = useState(userInitial)
+  const [isLoading, setIsLoading] = useState([]);
 
   //Get user
   const getUser = async (name, email, password, image) => {
-
+    setIsLoading(true);
     //API Call--
     const response = await fetch(`${host}/api/auth/getuser`, {
       method: "POST",
@@ -19,9 +20,15 @@ const UserState = (props) => {
         "auth-token": localStorage.getItem("token")
       },
     });
-    const json = await response.json()
+    if(response.ok){
+      const json = await response.json()
     console.log(json)
     setUser(json);
+    setIsLoading(false);
+    }else{
+      console.log("Error Featching user Data");
+      setIsLoading(false);
+    }
   }
 
  
@@ -41,7 +48,7 @@ const UserState = (props) => {
 }
 
     return (
-       <UserContext.Provider value={{user, getUser, deleteUser}}>
+       <UserContext.Provider value={{user, getUser, deleteUser, isLoading}}>
         {props.children}
        </UserContext.Provider>
     )

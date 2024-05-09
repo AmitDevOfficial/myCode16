@@ -22,6 +22,11 @@ import Notes from './components/Pages/Notes/Notes';
 import UserState from './Context/ContextUser/UserState';
 import NoteState from './Context/ContextNote/NoteState';
 import Admin from './components/Admin/Admin';
+import AdminUser from './components/Pages/Layouts/AdminUser/Admin-User';
+import AdminContacts from './components/Pages/Layouts/AdminContacts/AdminContact';
+import AdminServices from './components/Pages/Layouts/AdminServices/AdminServices';
+import AdminAnalytics from './components/Pages/Layouts/AdmnAnalytics/AdminAnalytics';
+
 
 
 
@@ -64,7 +69,13 @@ function App() {
               <Route exact path="/jquery" element={<Jquery />}/>
               <Route exact path="/python" element={<Python />}/>
               <Route exact path="/cms" element={<Cms />}/>
-              <Route exact path="/admin" element={<Admin/>}></Route>
+              
+              <Route exact path="/admin" element={<Admin/>}>
+                <Route exact path='user' element={<AdminUser/>}/>
+                <Route exact path='contact' element={<AdminContacts />}/>
+                <Route exact path='services' element={<AdminServices />}/>
+                <Route exact path='analytics' element={<AdminAnalytics />}/>
+              </Route>
             </Routes>
             <Footer />
           </BrowserRouter>
