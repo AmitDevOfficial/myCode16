@@ -7,6 +7,7 @@ const UserState = (props) => {
   const userInitial = []
 
   const [user, setUser] = useState(userInitial)
+  const [allUser, setAllUser] = useState(userInitial)
   const [isLoading, setIsLoading] = useState([]);
 
   //Get user
@@ -31,6 +32,24 @@ const UserState = (props) => {
     }
   }
 
+   //Get All user
+   const getAllUser = async () => {
+    //API Call--
+    const response = await fetch(`${host}/api/admin/getAllUser`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token")
+      },
+    });
+    if(response.ok){
+      const json = await response.json()
+    console.log(json)
+    setAllUser(json);
+    }else{
+      console.log("Error Featching user Data");
+    }
+  }
  
    //Delete User--
    const deleteUser = async(id) => {
@@ -47,8 +66,10 @@ const UserState = (props) => {
     console.log("I am Deleting my Account" + id);
 }
 
+
+
     return (
-       <UserContext.Provider value={{user, getUser, deleteUser, isLoading}}>
+       <UserContext.Provider value={{user, getUser, deleteUser, isLoading, getAllUser, allUser}}>
         {props.children}
        </UserContext.Provider>
     )

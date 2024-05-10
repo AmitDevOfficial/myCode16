@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const fetchAdmin = require("../middleware/fetchAdmin");
-const getUser = require("../controller/authAdmin");
-const fetchUser = require("../middleware/fetchUser")
+const fetchUser = require("../middleware/fetchUser");
+const getAllUser = require("../controller/authAdmin");
 
-router.get("/getUser", fetchUser, fetchAdmin, getUser);
+router.get("/getAllUser", fetchUser, fetchAdmin, getAllUser);
 
 module.exports = router;

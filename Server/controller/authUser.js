@@ -127,7 +127,6 @@ async function  getUser(req, res){
 }
 
 
-
 //Route-4: Update  the user using PUT "api/auth/updateuser/:id" --  Login Required--
 async function updateUser(req, res){
     const { name, email } = req.body;

@@ -2,16 +2,18 @@ import React, { useContext, useEffect } from 'react';
 import userContext from '../../Context/ContextUser/userContext';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import "./admin.css";
+import { RingLoader } from 'react-spinners'; 
 import GroupIcon from '@mui/icons-material/Group';
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import AdminUser from '../Pages/Layouts/AdminUser/Admin-User';
 
 export default function Admin() {
 
   const context = useContext(userContext);
   const { user, getUser, isLoading } = context;
+
+
 
   const navigate = useNavigate()
 
@@ -26,12 +28,13 @@ export default function Admin() {
   console.log("Admin Layout", user)
 
   if (isLoading) {
-    return <h1>Loading...</h1>
+    return <center className='ringLoader'><RingLoader color="#8f3ae4" size={70}/></center>
   }
 
   if (!user.isAdmin) {
     navigate("/");
   }
+
 
   return (
     <div className='container admin-Main'>
@@ -48,10 +51,10 @@ export default function Admin() {
             <p>{user.email}</p>
           </div>
           <ul className='adminNavLink'>
+            <li><Link to="analytics"><BarChartIcon /> Analytics</Link></li>
             <li><Link to="user"><GroupIcon /> User</Link></li>
             <li><Link to="contact"><AddIcCallIcon /> Contacts</Link></li>
             <li><Link to="services"><MiscellaneousServicesIcon /> Services</Link></li>
-            <li><Link to="analytics"><BarChartIcon /> Analytics</Link></li>
           </ul>
         </div>
         <div className='adminRight'>

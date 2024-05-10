@@ -1,10 +1,10 @@
+const User = require("../models/User")
 
 //Route-3: Get  the user using GET "api/auth/getuser" --  Login Required--
-async function  getUser(req, res){
-
+async function getAllUser(req, res){
     try {
-       
-        res.status(200).json({user: "hello"});
+        const user = await User.find().select("-password");
+        res.status(200).send(user);
     }
     catch (error) {
         console.error(error.message);
@@ -14,5 +14,4 @@ async function  getUser(req, res){
 
 
 
-module.exports =  getUser;
-    
+module.exports = getAllUser;
